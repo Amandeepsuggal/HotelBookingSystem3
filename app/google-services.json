@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "721445146383",
+    "firebase_url": "https://hba2-c5748.firebaseio.com",
+    "project_id": "hba2-c5748",
+    "storage_bucket": "hba2-c5748.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721445146383:android:d8ee75076532fe449b787a",
+        "android_client_info": {
+          "package_name": "com.example.hotelbookingsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721445146383-k45peqmrs3s2s87pb0vkiqnksdb8jua7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hotelbookingsystem",
+            "certificate_hash": "b69997f4fd2f170a82de5ce7a1c944308b72318c"
+          }
+        },
+        {
+          "client_id": "721445146383-qqofa14gd0jfs2faftd5uje84m0rmnr7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hotelbookingsystem",
+            "certificate_hash": "9804a8bbf3094d84854521b785ac2da3155709b8"
+          }
+        },
+        {
+          "client_id": "721445146383-4bm1vpj1dftsetc201llmt07orfv9n6f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hotelbookingsystem",
+            "certificate_hash": "6b80f59b9ecf757bbe37c9117cbdb477365626e4"
+          }
+        },
+        {
+          "client_id": "721445146383-efe79ksl5agj8a2ccej672b9sg0kfv27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhTxkO04z1vbDQ5ht908kXrQgFoz4f6lQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721445146383-efe79ksl5agj8a2ccej672b9sg0kfv27.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

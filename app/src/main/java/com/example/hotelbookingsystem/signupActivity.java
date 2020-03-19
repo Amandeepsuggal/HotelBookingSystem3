@@ -97,6 +97,14 @@ public class signupActivity extends AppCompatActivity implements View.OnClickLis
                             Toast.makeText(signupActivity.this,e.getMessage(), Toast.LENGTH_SHORT).show();
                             e.printStackTrace(); }
                     });
+            b2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(signupActivity.this,LoginActivity
+                            .class);
+            startActivity(i);
+        }
+});
 
         }
 
