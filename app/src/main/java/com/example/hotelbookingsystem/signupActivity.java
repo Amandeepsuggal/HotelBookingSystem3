@@ -41,35 +41,13 @@ public class signupActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.but2:
-                RetreiveData();
-                break;
             case R.id.but3:
                 adddataFirestore();
                 break;
         }
         }
-    public  void RetreiveData(){
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("Orders").get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful()){
-                            for(QueryDocumentSnapshot documentSnapshot : task.getResult()) {
-                                System.out.println(documentSnapshot.getData().toString());
 
-                            }
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
 
-                    }
-                });
-    }
         public void adddataFirestore() {
             String name = ed1.getText().toString();
             String email = ed2.getText().toString();
