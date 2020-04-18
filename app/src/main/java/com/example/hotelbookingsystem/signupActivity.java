@@ -20,96 +20,33 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 
-public class signupActivity extends AppCompatActivity implements View.OnClickListener {
-
-    EditText ed1, ed2, ed3;
-    Button b1, b2;
-
+public class signupActivity extends AppCompatActivity {
+    Button  b3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        ed1 = findViewById(R.id.e1);
-        ed2 = findViewById(R.id.e2);
-        ed3 = findViewById(R.id.e3);
-        b1 = findViewById(R.id.but2);
-        b2 = findViewById(R.id.but3);
-        b1.setOnClickListener(this);
-        b2.setOnClickListener(this);
-    }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.but3:
-                adddataFirestore();
-                break;
-            case R.id.but2:
-                RetreiveData();
-                break;
-        }
-        }
-    public  void RetreiveData(){
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("Orders").get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful()){
-                            for(QueryDocumentSnapshot documentSnapshot : task.getResult()) {
-                                System.out.println(documentSnapshot.getData().toString());
-
-                            }
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                    }
-                });
-
-
+        b3 = findViewById(R.id.but3); b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(signupActivity.this,LoginActivity.class);
+                startActivity(i);
             }
-
-
-        public void adddataFirestore() {
-            String name = ed1.getText().toString();
-            String email = ed2.getText().toString();
-            String password = ed3.getText().toString();
-
-            HashMap<String,String> order = new HashMap<>();
-            order.put("name", name);
-            order.put("email", email);
-            order.put("password", password);
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-            db.collection("Orders")
-                    .add(order)
-
-
-
-                    .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-                        @Override
-                        public void onComplete(@NonNull Task<DocumentReference> task) {
-                            Toast.makeText(signupActivity.this, "Done", Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(signupActivity.this,e.getMessage(), Toast.LENGTH_SHORT).show();
-                            e.printStackTrace(); }
-                    });
-            b2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(signupActivity.this,LoginActivity
-                            .class);
-            startActivity(i);
+        });
         }
-});
-
         }
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
