@@ -34,7 +34,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoginActivity extends AppCompatActivity {
     private Retrofit retrofit;
     private RetrofitInterface retrofitInterface;
-    private String BASE_URL = "http://127.0.0.1:3033";
+    private String BASE_URL = "http://192.168.2.23:3033";
 
     Button b4, b5;
 

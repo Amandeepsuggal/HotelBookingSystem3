@@ -30,13 +30,23 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class signupActivity extends AppCompatActivity {
     Button b2, b3;
-
+    private Retrofit retrofit;
+    private RetrofitInterface retrofitInterface;
+    private String BASE_URL = "http://192.168.2.23:3033";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        retrofit = new Retrofit.Builder().baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create()).build();
+        retrofitInterface = retrofit.create(RetrofitInterface.class);
+
         b2 = findViewById(R.id.but2);
         final EditText ed1 = findViewById(R.id.e1);
         final EditText ed2 = findViewById(R.id.e2);
@@ -61,7 +71,7 @@ public class signupActivity extends AppCompatActivity {
                             try {
 
                                 System.out.println("Call");
-                                URL url = new URL("http://127.0.0.1:3033/register");
+                                URL url = new URL("http://192.168.2.23:3033/register");
                                 HttpURLConnection client = null;
                                 client = (HttpURLConnection) url.openConnection();
                                 client.setRequestMethod("POST");

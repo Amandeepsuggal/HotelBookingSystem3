@@ -5,11 +5,11 @@ public class LoginResult {
 
     private String password;
 
-    public String getName() {
+    public String getemail() {
         return email;
     }
 
-    public String getEmail() {
+    public String getpassword() {
         return password;
     }
 }
