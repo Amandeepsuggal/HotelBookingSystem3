@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -100,14 +101,14 @@ public class LoginActivity extends AppCompatActivity {
 
                                 if (content.contains("Valid user")) {
                                     String e1 = ed1.getText().toString();
-                                 //   Intent i = new Intent(LoginActivity.this, HotelActivity.class);
-                                 //   i.putExtra("email", e1);
-                                    // Toast.makeText(MainActivity.this,"Login Success",Toast.LENGTH_LONG).show();
+                                    Intent i = new Intent(LoginActivity.this, HotelActivity.class);
+                                   i.putExtra("email", e1);
+                                   Toast.makeText(LoginActivity.this,"Login Success",Toast.LENGTH_LONG).show();
 
 
-                                  //  startActivity(i);
+                                  startActivity(i);
                                 } else {
-                                    // Toast.makeText(MainActivity.this,"Wrong Credentials",Toast.LENGTH_LONG).show();
+                                   Toast.makeText(LoginActivity.this,"Wrong Credentials",Toast.LENGTH_LONG).show();
 
                                 }
                                 int responseCode = client.getResponseCode();
@@ -130,12 +131,12 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
-        b5 = findViewById(R.id.but5);
-        b5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this, HotelActivity.class);
-                startActivity(i);
+//        b5 = findViewById(R.id.but5);
+//        b5.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(LoginActivity.this, HotelActivity.class);
+//                startActivity(i);
 
             }
 
@@ -156,8 +157,7 @@ public class LoginActivity extends AppCompatActivity {
         return sb.toString();
     }
 
-        });
-    }
+
 
 
 }
