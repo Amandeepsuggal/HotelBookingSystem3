@@ -101,14 +101,14 @@ public class LoginActivity extends AppCompatActivity {
 
                                 if (content.contains("Valid user")) {
                                     String e1 = ed1.getText().toString();
-                                    Intent i = new Intent(LoginActivity.this, HotelActivity.class);
-                                   i.putExtra("email", e1);
-                                   Toast.makeText(LoginActivity.this,"Login Success",Toast.LENGTH_LONG).show();
+//                                    Intent i = new Intent(LoginActivity.this, HotelActivity.class);
+//                                   i.putExtra("email", e1);
+                                    Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_LONG).show();
 
 
-                                  startActivity(i);
+//                                  startActivity(i);
                                 } else {
-                                   Toast.makeText(LoginActivity.this,"Wrong Credentials",Toast.LENGTH_LONG).show();
+                                    Toast.makeText(LoginActivity.this, "Wrong Credentials", Toast.LENGTH_LONG).show();
 
                                 }
                                 int responseCode = client.getResponseCode();
@@ -131,33 +131,34 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
-//        b5 = findViewById(R.id.but5);
-//        b5.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(LoginActivity.this, HotelActivity.class);
-//                startActivity(i);
+        b5 = findViewById(R.id.but5);
+        b5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, HotelActivity.class);
+                startActivity(i);
 
             }
 
 
-    private String getPostDataString(HashMap<String, String> map) throws UnsupportedEncodingException {
-        StringBuilder sb = new StringBuilder();
-        boolean first = true;
-        for (Map.Entry<String, String> entry : map.entrySet()) {
-            if (first)
-                first = false;
-            else
-                sb.append("&");
+            private String getPostDataString(HashMap<String, String> map) throws UnsupportedEncodingException {
+                StringBuilder sb = new StringBuilder();
+                boolean first = true;
+                for (Map.Entry<String, String> entry : map.entrySet()) {
+                    if (first)
+                        first = false;
+                    else
+                        sb.append("&");
 
-            sb.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
-            sb.append("=");
-            sb.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
-        }
-        return sb.toString();
+                    sb.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
+                    sb.append("=");
+                    sb.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
+                }
+                return sb.toString();
+            }
+
+        });
+
+
     }
-
-
-
-
 }
